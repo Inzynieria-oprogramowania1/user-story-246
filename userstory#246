@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacja Magazynowa</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .menu { background: #333; color: white; padding: 10px; display: flex; }
+        .menu a { color: white; margin-right: 10px; text-decoration: none; }
+        .form-container { max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; }
+    </style>
+    <script>
+        function toggleMenu() {
+            let menu = document.getElementById("dynamicMenu");
+            menu.style.display = menu.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <a href="#" onclick="toggleMenu()">Menu</a>
+        <div id="dynamicMenu" style="display: none;">
+            <a href="#login">Logowanie</a>
+            <a href="#register">Rejestracja</a>
+            <a href="#edit">Edytuj części</a>
+        </div>
+    </div>
+    
+    <div class="form-container" id="login">
+        <h2>Logowanie</h2>
+        <form>
+            <label for="username">Nazwa użytkownika:</label>
+            <input type="text" id="username" required>
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Zaloguj</button>
+        </form>
+    </div>
+    
+    <div class="form-container" id="register">
+        <h2>Rejestracja</h2>
+        <form>
+            <label for="newUsername">Nazwa użytkownika:</label>
+            <input type="text" id="newUsername" required>
+            <label for="newPassword">Hasło:</label>
+            <input type="password" id="newPassword" required>
+            <button type="submit">Zarejestruj</button>
+        </form>
+    </div>
+    
+    <div class="form-container" id="edit">
+        <h2>Edytuj część</h2>
+        <form>
+            <label for="partName">Nazwa części:</label>
+            <input type="text" id="partName" required>
+            <label for="cost">Koszt:</label>
+            <input type="number" id="cost" required>
+            <label for="quantity">Ilość:</label>
+            <input type="number" id="quantity" required>
+            <label for="brand">Marka:</label>
+            <input type="text" id="brand" required>
+            <label for="status">Stan:</label>
+            <select id="status">
+                <option>Nowy</option>
+                <option>Używany</option>
+                <option>Uszkodzony</option>
+            </select>
+            <button type="submit">Zapisz</button>
+        </form>
+    </div>
+</body>
+</html>
