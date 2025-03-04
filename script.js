@@ -23,4 +23,12 @@ function register(event) {
 function editPart(event) {
     event.preventDefault();
     alert("Dane części zapisane: " + document.getElementById("partName").value);
+    addUpdate("Edytowano część: " + document.getElementById("partName").value);
+}
+
+function addUpdate(message) {
+    let updatesList = document.getElementById("updatesList");
+    let newUpdate = document.createElement("li");
+    newUpdate.textContent = new Date().toLocaleString() + " - " + message;
+    updatesList.prepend(newUpdate);
 }
